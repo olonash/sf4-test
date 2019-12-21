@@ -1,0 +1,41 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+home:
+    path: /
+    controller: App\Controller\AuteurController::liste
+
+home_json:
+    path: /json
+    controller: App\Controller\HomeController::homeJson
+home_dynamic:
+    path: /dynamic
+    controller: App\Controller\HomeController::homeDynamic
+
+auteur_ajout:
+    path: /auteur/ajout
+    controller: App\Controller\AuteurController::ajout
+auteur_ajout_form:
+    path: /auteur/ajout-form
+    controller: App\Controller\AuteurController::ajoutAvecForm
+
+auteur_liste:
+    path: /auteur/liste
+    controller: App\Controller\AuteurController::liste
+
+auteur_editer:
+    path: /auteur/editer/{id}
+    controller: App\Controller\AuteurController::editer
+auteur_supprimer:
+    path: /auteur/supprimer/{id}
+    controller: App\Controller\AuteurController::supprimer
+auteur_service:
+    path: /auteur/service
+    controller: App\Controller\AuteurController::utilisationService
+
+acces_granted:
+    path: /is-granted
+    controller: App\Controller\AdminController::accesAvecRole
+
+

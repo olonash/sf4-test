@@ -1,0 +1,21 @@
+<?php //%255BApp%255CController%255CAdminController%2523accesAvecRole%255D%255B1%255D
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (Registry::$prototypes['Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security'] ?? Registry::p('Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security')),
+    ],
+    null,
+    [
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security' => [
+            'expression' => [
+                'is_granted(\'ROLE_ADMIN\')',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+    ],
+    []
+);

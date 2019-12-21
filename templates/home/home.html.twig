@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('test.css') }}" rel="stylesheet" />
+{% endblock %}
+{% block header %}{% include 'home/header.html.twig' %}{% endblock %}
+
+{% block body %}
+    bonjour Mme {{ anarana }} <br>
+    {{ objet.nom }}
+{% endblock %}
+
+{% block title %}Bonj{% endblock %}
+
+{% block javascripts %}
+<script src=""></script>
+{% endblock %}

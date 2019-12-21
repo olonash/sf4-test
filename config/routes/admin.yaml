@@ -1,0 +1,4 @@
+admin_index:
+    path: /admin/
+    controller: App\Controller\AdminController::index
+

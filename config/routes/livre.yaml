@@ -1,0 +1,10 @@
+livre_ajout:
+    path: /livre/ajout
+    controller: App\Controller\LivreController::ajout
+
+livre_editer:
+    path: /livre/editer/{id}
+    controller: App\Controller\LivreController::editer
+livre_liste:
+    path: /livre/liste
+    controller: App\Controller\LivreController::liste

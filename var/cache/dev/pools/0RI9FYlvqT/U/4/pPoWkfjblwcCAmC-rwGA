@@ -1,0 +1,104 @@
+<?php //%255BApp%255CEntity%255CLangue%2524CLASSMETADATA%255D%255B1%255D
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Langue',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Langue',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\LangueRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'nom' => [
+                        'fieldName' => 'nom',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'nom',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'nom' => 'nom',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'nom' => 'nom',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'langue',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'livres' => [
+                        'fieldName' => 'livres',
+                        'joinTable' => [],
+                        'targetEntity' => 'App\\Entity\\Livre',
+                        'mappedBy' => 'langues',
+                        'inversedBy' => null,
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 2,
+                        'type' => 8,
+                        'isOwningSide' => false,
+                        'sourceEntity' => 'App\\Entity\\Langue',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+);

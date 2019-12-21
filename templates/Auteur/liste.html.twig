@@ -1,0 +1,43 @@
+{% extends 'base2.html.twig' %}
+{% block body %}
+		{#<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+			<h1 class="h2">Dashboard</h1>
+			<div class="btn-toolbar mb-2 mb-md-0">
+				<div class="btn-group mr-2">
+					<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+					<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+				</div>
+				<button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+					<span data-feather="calendar"></span>
+					This week
+				</button>
+			</div>
+		</div>#}
+		<h2>Liste des auteurs </h2>
+		<div class="table-responsive">
+			<table class="table table-striped table-sm">
+				<thead>
+				<tr><th colspan="4" style="text-align: right"><a href="{{ path('auteur_ajout_form', {}) }}">Ajouter</a></th></tr>
+				<tr>
+					<th>#</th>
+					<th>Nom</th>
+					<th>Prenom</th>
+					<th>Actions</th>
+				</tr>
+				</thead>
+				<tbody>
+
+                {% for auteur in liste %}
+
+					<tr>
+						<td>{{ auteur.id }} </td>
+						<td>{{ auteur.nom }} </td>
+						<td> {{ auteur.prenom }}</td>
+						<td> <a href ="{{ path('auteur_editer', {'id': auteur.id }) }}" > Editer </a> &nbsp
+							<a href ="{{ path('auteur_supprimer', {'id': auteur.id }) }}" > Supprimer </a></td>
+					</tr>
+                {% endfor %}
+				</tbody>
+			</table>
+		</div>
+{% endblock %}
